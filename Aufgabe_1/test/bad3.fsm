@@ -1,0 +1,4 @@
+start Ein_State
+state Ein_State:
+on action do something
+on action do something_else

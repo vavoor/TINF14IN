@@ -1,0 +1,4 @@
+start Eins
+state Eins:
+do a
+do b

@@ -1,0 +1,11 @@
+start First
+
+state First:
+do FirstAction
+on EVENT_1 goto Second
+
+state Second:
+on EVENT_2 goto First
+on EVENT_3 goto Third
+
+state Third:
