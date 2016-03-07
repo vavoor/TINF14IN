@@ -1,3 +1,3 @@
 #! /bin/sh
 
-javac -cp src -d dst src/*.java
+javac -cp dst -d dst src/*.java
