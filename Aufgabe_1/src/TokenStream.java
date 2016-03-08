@@ -1,17 +1,16 @@
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.LineNumberReader;
-import java.io.EOFException;
 import java.io.IOException;
 
 /**
  * Implementation of the scanner for the FSM Generator
  */
 public class TokenStream {
-    
+
     private LineNumberReader input;
     private int lookahead = -1;
-    
+
     /**
      * Starts the scanner.
      *
@@ -21,14 +20,14 @@ public class TokenStream {
      */
     public TokenStream(InputStream input) {
         this.input = new LineNumberReader(new InputStreamReader(input));
-        
+
     }
-    
+
     /**
      * Returns the next token from the TokenStream.
      */
     public Token nextToken()
-    throws IllegalInputException, EOFException, IOException {
+    throws IllegalInputException, IOException {
         skipSpaces();
         int line = input.getLineNumber()+1;
         if (lookahead==-1) {
@@ -71,7 +70,7 @@ public class TokenStream {
             throw new IllegalInputException("Illegal character '"+(char)lookahead+"'",line);
         }
     }
-    
+
     private void skipSpaces() throws IOException {
         if (lookahead==-1) {
             lookahead = input.read();
