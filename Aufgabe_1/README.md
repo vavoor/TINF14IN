@@ -36,7 +36,7 @@ Dieser Automat ...
 
 soll in diesen Java-Code übersetzt werden:
 
-Interface.java:
+FSMActions.java:
 
     interface FSMActions {
       void prepare();
