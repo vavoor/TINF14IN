@@ -1,2 +1,2 @@
 start StartState
-state StartState
+state StartState:
