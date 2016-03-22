@@ -13,7 +13,7 @@ public class Token {
         this.val = value;
         this.line = line;
 
-        System.out.println("Line "+line+": "+value);
+        //System.out.println("Line "+line+": "+value);
     }
 
     /**

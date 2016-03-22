@@ -14,7 +14,7 @@ abstract class FSMParser {
         FSM fsm = new FSM(startState);
         while (la.type()==Token.TOKEN.STATE) {
             State state = pZustand();
-            FSM.addState(state);
+            fsm.addState(state);
         }
         return fsm;
     }
@@ -29,11 +29,11 @@ abstract class FSMParser {
     private State pZustand() throws IllegalInputException, IOException {
         match(Token.TOKEN.STATE);
         Token id = la;
-        State state = new State(id.value());
         match(Token.TOKEN.ID);
+        State state = new State(id.value());
         match(Token.TOKEN.COLON);
         if (la.type()==Token.TOKEN.DO) {
-            Action a = pAktion();
+            String a = pAktion();
             state.addAction(a);
         }
         while (la.type()==Token.TOKEN.ON) {
