@@ -1,0 +1,11 @@
+start Initial
+state Initial:
+  do prepare
+  on start goto Started
+state Started:
+  do start
+  on stop goto Stopped
+state Stopped:
+  do stop
+  on init goto Initial
+  on start goto Started
