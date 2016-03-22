@@ -9,7 +9,10 @@ public class FSMGen extends FSMParser {
         try {
             TokenStream inp = new TokenStream(new FileInputStream(args[0]));
             FSMGen gen = new FSMGen(inp);
-            gen.parse();
+            FSM fsm = gen.parse();
+            fsm.check();
+            fsm.generateInterface();
+            fsm.generateClass();
             // run the semantic checks
             // generate the output
         }

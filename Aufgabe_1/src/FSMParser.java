@@ -23,7 +23,7 @@ abstract class FSMParser {
         match(Token.TOKEN.START);
         Token id = la;
         match(Token.TOKEN.ID);
-        return la.value();
+        return id.value();
     }
 
     private State pZustand() throws IllegalInputException, IOException {
