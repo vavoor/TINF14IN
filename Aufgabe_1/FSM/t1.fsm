@@ -1,0 +1,13 @@
+
+start Bla
+
+state Bla:
+on x goto Foo
+
+state Foo:
+do nix
+on x goto Bla
+on y goto Bay
+
+state Baz:
+
