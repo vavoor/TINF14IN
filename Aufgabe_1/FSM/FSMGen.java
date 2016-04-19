@@ -11,7 +11,7 @@ class FSMGen {
     ParseTree tree = parser.fsm();
 
     FSMGenVisitor v = new FSMGenVisitor();
-    v.visit(tree);
+    ASTFSM fsm = (ASTFSM) v.visit(tree);
 
     // System.out.println(tree.toStringTree(parser));
   }
