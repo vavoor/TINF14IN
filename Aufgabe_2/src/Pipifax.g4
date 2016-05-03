@@ -1,12 +1,7 @@
 grammar Pipifax;
 
 program
-	: declaration*
-	;
-
-declaration
-	: var_decl	# VarDecl
-	| func_def	# FuncDef
+	: (var_decl | func_def )*
 	;
 
 var_decl
