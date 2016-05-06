@@ -103,7 +103,7 @@ expr
 	;
 
 fragment D
-	: [0..9]
+	: [0-9]
 	;
 
 fragment N
@@ -115,11 +115,11 @@ fragment E
 	;
 
 fragment L
-	: [_A..Za-z]
+	: [_A-Za-z]
 	;
 
 ID
-	: D (D|L)*
+	: L (D|L)*
 	;
 
 INT
