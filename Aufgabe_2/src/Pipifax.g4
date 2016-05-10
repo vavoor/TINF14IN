@@ -13,10 +13,10 @@ func_def
 	;
 
 type
-	: 'int'
-	| 'double'
-	| 'string'
-	| '[' INT ']' type
+	: 'int' #int_type
+	| 'double' #double_type
+	| 'string' #string_type
+	| '[' INT ']' type #array_type
 	;
 
 param_list
@@ -28,9 +28,9 @@ param
 	;
 
 param_type
-	: type
-	| '*' type
-	| '*' '[' ']' type
+	: type #pass_through_type
+	| '*' type #reference_type
+	| '*' '[' ']' type #ref_to_array_type
 	;
 
 block
